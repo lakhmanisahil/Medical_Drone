@@ -20,34 +20,28 @@
             <form action="../symptoms/">
                 <ul>
                     <li>
-                        <input type="checkbox" name="Fracture" id="Fracture" {% if 'Fracture' in request.GET %} checked{% endif %}>
-                        Fracture
-                        </input>
+                        <input type="checkbox" name="Fracture" id="Fracture" {% if 'Fracture' in request.GET %} checked{% endif %} />
+                        <label for="Fracture">Fracture</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="Injury" id="Injury" {% if 'Injury' in request.GET %} checked{% endif %}>
-                        Injury
-                        </input>
+                        <input type="checkbox" name="Injury" id="Injury" {% if 'Injury' in request.GET %} checked{% endif %} />
+                        <label for="Injury">Infrared</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="JointDislocation" id="JointDislocation" {% if 'JointDislocation' in request.GET %} checked{% endif %}>
-                        Joint Dislocation
-                        </input>
+                        <input type="checkbox" name="JointDislocation" id="JointDislocation" {% if 'JointDislocation' in request.GET %} checked{% endif %} />
+                        <label for="JointDislocation">Joint Dislocation</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="Swelling" id="Swelling" {% if 'Swelling' in request.GET %} checked{% endif %}>
-                        Swelling
-                        </input>
+                        <input type="checkbox" name="Swelling" id="Swelling" {% if 'Swelling' in request.GET %} checked{% endif %} />
+                        <label for="Swelling">Swelling</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="Wound" id="Wound" {% if 'Wound' in request.GET %} checked{% endif %}>
-                        Wound
-                        </input>
+                        <input type="checkbox" name="Wound" id="Wound" {% if 'Wound' in request.GET %} checked{% endif %} />
+                        <label for="Wound">Wound</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="Fine" id="Fine" {% if 'Fine' in request.GET %} checked{% endif %}>
-                        Fine
-                        </input>
+                        <input type="checkbox" name="Fine" id="Fine" {% if 'Fine' in request.GET %} checked{% endif %} />
+                        <label for="Fine">Fine</label>
                     </li>
                     <li>
                         <button>
@@ -78,9 +72,11 @@
                 </button>
             </form>
         </div>
-        <button class="depart">
-            Depart
-        </button>
+		<form action="../depart/">
+			<button class="depart">
+				Depart
+			</button>
+		</form>
     </div>
     <script>
         const video = document.getElementById('webcam');
