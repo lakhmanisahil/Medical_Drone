@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>
+        Medical Dashboard
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="camera">
+            <video autoplay="" id="webcam" width="100%" height="100%" style="border-radius: 10px;"></video>
+        </div>
+        <div class="symptoms">
+            <h2>
+                Other Symptoms
+            </h2>
+            <form action="../symptoms/">
+                <ul>
+                    <li>
+                        <input type="checkbox" name="Fracture" id="Fracture" {% if 'Fracture' in request.GET %} checked{% endif %}>
+                        Fracture
+                        </input>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="Injury" id="Injury" {% if 'Injury' in request.GET %} checked{% endif %}>
+                        Injury
+                        </input>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="JointDislocation" id="JointDislocation" {% if 'JointDislocation' in request.GET %} checked{% endif %}>
+                        Joint Dislocation
+                        </input>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="Swelling" id="Swelling" {% if 'Swelling' in request.GET %} checked{% endif %}>
+                        Swelling
+                        </input>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="Wound" id="Wound" {% if 'Wound' in request.GET %} checked{% endif %}>
+                        Wound
+                        </input>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="Fine" id="Fine" {% if 'Fine' in request.GET %} checked{% endif %}>
+                        Fine
+                        </input>
+                    </li>
+                    <li>
+                        <button>
+                            Submit
+                        </button>
+                    </li>
+                </ul>
+            </form>
+
+        </div>
+    </div>
+    <div class="device-container">
+        <div class="device">
+            <img alt="Image of an oximeter" height="100" src="../static/Media/Oximeter.jpg" width="100" />
+
+            <form action="../oximeter/">
+                <button>
+                    Oximeter
+                </button>
+            </form>
+        </div>
+        <div class="device">
+            <img alt="Image of an infrared thermometer" height="100" src="../static/Media/Thermometer.jpg"
+                width="100" />
+            <form action="../thermometer/">
+                <button>
+                    Infrared Thermometer
+                </button>
+            </form>
+        </div>
+        <button class="depart">
+            Depart
+        </button>
+    </div>
+    <script>
+        const video = document.getElementById('webcam');
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (error) {
+                    console.log("Something went wrong!");
+                });
+        }
+    </script>
+</body>
+
+</html>
