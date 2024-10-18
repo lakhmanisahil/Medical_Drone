@@ -27,3 +27,7 @@ def thermometer(request):
     print("Thermometer is clicked")
     return home(request)
 
+def depart(request):
+    print("Depart is clicked")
+    return home(request)
+
