@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <div class="camera">
-            <video autoplay="" id="webcam" width="100%" height="100%" style="border-radius: 10px;"></video>
+            <!-- <video autoplay="" id="webcam" width="100%" height="100%" style="border-radius: 10px;"></video> -->
         </div>
         <div class="symptoms">
             <h2>
@@ -79,17 +79,17 @@
 		</form>
     </div>
     <script>
-        const video = document.getElementById('webcam');
+        //const video = document.getElementById('webcam');
 
-        if (navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(function (stream) {
-                    video.srcObject = stream;
-                })
-                .catch(function (error) {
-                    console.log("Something went wrong!");
-                });
-        }
+        //if (navigator.mediaDevices.getUserMedia) {
+         //   navigator.mediaDevices.getUserMedia({ video: true })
+           //     .then(function (stream) {
+             //       video.srcObject = stream;
+             //   })
+             //   .catch(function (error) {
+             //       console.log("Something went wrong!");
+             //   });
+        //}
     </script>
 </body>
 

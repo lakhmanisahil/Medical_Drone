@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from os import path
+from os import path, system
 
 from subprocess import run,PIPE
 import sys
@@ -20,6 +20,7 @@ def symptoms(request):
     return home(request)
 
 def oximeter(request):
+    system(r"python Aeropulse/scripts/oximeter.py")
     print("Oximeter is clicked")
     return home(request)
 
