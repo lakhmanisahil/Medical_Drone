@@ -5,7 +5,7 @@ import csv
 import os
 
 # Set up Tesseract
-# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Update path if needed
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Update path if needed
 
 # Initialize camera
 cap = cv2.VideoCapture(0)  # Change the index if you have multiple cameras

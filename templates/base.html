@@ -1,6 +1,9 @@
 <html>
 
 <head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         Medical Dashboard
     </title>
@@ -11,6 +14,8 @@
 <body>
     <div class="container">
         <div class="camera">
+                <img src="{% url 'live_camera' %}" width="100%" height="100%" style="border-radius: 10px;"> <!-- Loading the /camera page as an image -->
+
             <!-- <video autoplay="" id="webcam" width="100%" height="100%" style="border-radius: 10px;"></video> -->
         </div>
         <div class="symptoms">
@@ -19,28 +24,28 @@
             </h2>
             <form action="../symptoms/">
                 <ul>
-                    <li>
-                        <input type="checkbox" name="Fracture" id="Fracture" {% if 'Fracture' in request.GET %} checked{% endif %} />
+                    <li> <!-- ! DO NOT FORMAT THIS, THE CONDITIONS NEED TO STAY ON SAME LINE TO WORK -->
+                        <input type="checkbox" name="Fracture" id="Fracture" {% if 'Fracture' in request.GET %} checked {% endif %} />
                         <label for="Fracture">Fracture</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="Injury" id="Injury" {% if 'Injury' in request.GET %} checked{% endif %} />
-                        <label for="Injury">Infrared</label>
+                        <input type="checkbox" name="Injury" id="Injury" {% if 'Injury' in request.GET %} checked {% endif %} />
+                        <label for="Injury">Injury</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="JointDislocation" id="JointDislocation" {% if 'JointDislocation' in request.GET %} checked{% endif %} />
+                        <input type="checkbox" name="JointDislocation" id="JointDislocation" {% if 'JointDislocation' in request.GET %} checked {% endif %} />
                         <label for="JointDislocation">Joint Dislocation</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="Swelling" id="Swelling" {% if 'Swelling' in request.GET %} checked{% endif %} />
+                        <input type="checkbox" name="Swelling" id="Swelling" {% if 'Swelling' in request.GET %} checked {% endif %} />
                         <label for="Swelling">Swelling</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="Wound" id="Wound" {% if 'Wound' in request.GET %} checked{% endif %} />
+                        <input type="checkbox" name="Wound" id="Wound" {% if 'Wound' in request.GET %} checked {% endif %} />
                         <label for="Wound">Wound</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="Fine" id="Fine" {% if 'Fine' in request.GET %} checked{% endif %} />
+                        <input type="checkbox" name="Fine" id="Fine" {% if 'Fine' in request.GET %} checked {% endif %} />
                         <label for="Fine">Fine</label>
                     </li>
                     <li>
@@ -72,23 +77,30 @@
                 </button>
             </form>
         </div>
-		<form action="../depart/">
-			<button class="depart">
-				Depart
-			</button>
-		</form>
+        <form action="../depart/">
+            <button class="depart">
+                Depart
+            </button>
+        </form>
     </div>
+        <!-- <div class="device">
+            <form action="../cancel/">
+                <button>
+                    Cancel
+                </button>
+            </form>
+        </div> -->
     <script>
         //const video = document.getElementById('webcam');
 
         //if (navigator.mediaDevices.getUserMedia) {
-         //   navigator.mediaDevices.getUserMedia({ video: true })
-           //     .then(function (stream) {
-             //       video.srcObject = stream;
-             //   })
-             //   .catch(function (error) {
-             //       console.log("Something went wrong!");
-             //   });
+        //   navigator.mediaDevices.getUserMedia({ video: true })
+        //     .then(function (stream) {
+        //       video.srcObject = stream;
+        //   })
+        //   .catch(function (error) {
+        //       console.log("Something went wrong!");
+        //   });
         //}
     </script>
 </body>
