@@ -31,7 +31,6 @@ def symptoms(request):
     Wound = "Wound" in request.GET
     Fine = "Fine" in request.GET
 
-    # timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open("symptoms.csv", mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Fracture", "Injury", "JointDislocation", "Swelling", "Wound", "Fine"])
@@ -41,7 +40,7 @@ def symptoms(request):
     return home(request)
 
 def oximeter(request):
-    # system(r"python Aeropulse/scripts/oximeter.py")
+    OXIMETER.start_camera()
     threading.Thread(target=OXIMETER.capture_and_process(), args=()).start()
     
     print("Oximeter is clicked")
@@ -57,7 +56,7 @@ def thermometer(request):
 
 def depart(request):
     OXIMETER.stop_camera()
-    system(r'''ros2 service call /mavros/set_mode mavros_msgs/srv/SetMode "{base_mode: 0, custom_mode: 'RTL'}"''')
+    # system(r'''ros2 service call /mavros/set_mode mavros_msgs/srv/SetMode "{base_mode: 0, custom_mode: 'RTL'}"''')
     print("Depart is clicked")
     return redirect("home")
 
